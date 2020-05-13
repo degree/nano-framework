@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>by.degree.learn</groupId>
-    <artifactId>solid-disinfector</artifactId>
+    <artifactId>solid-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
