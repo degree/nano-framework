@@ -1,4 +1,4 @@
-# Desinfector
+# SOLID Framework
 
 ## [SOLID](https://en.wikipedia.org/wiki/SOLID)
 
