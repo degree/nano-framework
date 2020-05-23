@@ -1,11 +1,6 @@
 package by.degree.learn.solid.framework;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 public class Context {
-    @SuppressWarnings("rawtypes")
-    private final Map<Class, Object> CACHE = new ConcurrentHashMap<>();
     private final Config config;
     private ObjectFactory factory;
 
@@ -14,20 +9,8 @@ public class Context {
     }
 
     public <T> T getObject(Class<T> target) {
-        if (CACHE.containsKey(target)) {
-            //noinspection unchecked
-            return (T) CACHE.get(target);
-        }
-
-        Class<? extends T> implClass = config.lookupImplementationClass(target);
-
-        T object = factory.createObject(implClass);
-
-        if (config.isSingleton(implClass)) {
-            CACHE.put(target, object);
-        }
-
-        return object;
+        var implClass = config.lookupImplementationClass(target);
+        return factory.createObject(implClass);
     }
 
     public void setFactory(ObjectFactory factory) {
@@ -37,4 +20,6 @@ public class Context {
     public Config getConfig() {
         return config;
     }
+
+
 }
