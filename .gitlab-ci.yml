@@ -3,3 +3,8 @@ image: maven:3-openjdk-11
 Test:
   script:
     - mvn test
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml
