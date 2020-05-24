@@ -42,6 +42,6 @@ class JavaConfigTest {
     @Test
     void classIsListedOnce() {
         var classes = config.listImplementations(TestSingleImplementationInterface.class);
-        assertEquals(1, classes.size());
+        assertEquals(2, classes.size());
     }
 }
