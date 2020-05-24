@@ -1,13 +1,11 @@
 package by.degree.learn.nano.framework;
 
-import by.degree.learn.nano.framework.test.TestSingletonComponent;
-import by.degree.learn.nano.framework.Application;
-import by.degree.learn.nano.framework.Context;
 import by.degree.learn.nano.framework.test.TestSingleImplementationInterface;
+import by.degree.learn.nano.framework.test.TestSingletonComponent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class CachingContextTest {
 

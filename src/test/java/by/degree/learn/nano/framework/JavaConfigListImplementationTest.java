@@ -2,7 +2,6 @@ package by.degree.learn.nano.framework;
 
 import by.degree.learn.nano.framework.test.NoComponent;
 import by.degree.learn.nano.framework.test.TestMyMetaComponent;
-import by.degree.learn.nano.framework.JavaConfig;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

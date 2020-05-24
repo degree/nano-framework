@@ -1,7 +1,6 @@
 package by.degree.learn.nano.framework;
 
 import by.degree.learn.nano.framework.test.*;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
