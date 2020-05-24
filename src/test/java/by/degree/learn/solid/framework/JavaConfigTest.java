@@ -3,8 +3,7 @@ package by.degree.learn.solid.framework;
 import by.degree.learn.solid.framework.test.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class JavaConfigTest {
 
@@ -38,5 +37,11 @@ class JavaConfigTest {
     @Test
     void myMetaComponentIsComponent() {
         assertTrue(config.isComponent(TestMyMetaComponent.class), "Class annotated with meta-annotation with @Component must be treated as component");
+    }
+
+    @Test
+    void classIsListedOnce() {
+        var classes = config.listImplementations(TestSingleImplementationInterface.class);
+        assertEquals(1, classes.size());
     }
 }

@@ -20,7 +20,7 @@ public class CachingContext extends Context {
 
         var object = super.getObject(target);
 
-        if (getConfig().isSingleton(getConfig().lookupImplementationClass(target))) {
+        if (getConfig().isSingleton(object.getClass())) {
             CACHE.put(target, object);
         }
 

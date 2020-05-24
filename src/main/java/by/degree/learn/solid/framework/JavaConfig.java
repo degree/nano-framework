@@ -96,6 +96,6 @@ public class JavaConfig implements Config {
         }
         framework.getSubTypesOf(type).forEach(builder);
         application.getSubTypesOf(type).stream().filter(this::isComponent).forEach(builder);
-        return builder.build().collect(Collectors.toList());
+        return builder.build().collect(Collectors.toSet());
     }
 }
