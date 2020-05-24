@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/solid-framework.iml" filepath="$PROJECT_DIR$/.idea/solid-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nano-framework.iml" filepath="$PROJECT_DIR$/.idea/nano-framework.iml" />
     </modules>
   </component>
 </project>

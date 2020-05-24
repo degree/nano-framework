@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="solid-framework" />
+        <module name="nano-framework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="solid-framework" target="11" />
+      <module name="nano-framework" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
