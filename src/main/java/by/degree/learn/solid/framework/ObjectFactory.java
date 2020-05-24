@@ -20,19 +20,19 @@ public class ObjectFactory {
         return context.getConfig().listImplementations(type).stream().map(this::create).collect(Collectors.toList());
     }
 
-    public <T> T createObject(Class<T> implClass) {
+    public <T> T createObject(Class<T> target, Class<? extends T> implClass) {
         T t = create(implClass);
 
         configure(t);
 
         secondPhase(t, implClass);
 
-        t = proxy(t, implClass);
+        t = proxy(t, target, implClass);
 
         return t;
     }
 
-    private <T> void secondPhase(T t, Class<T> implClass) {
+    private <T> void secondPhase(T t, Class<? extends T> implClass) {
         for (Method method : implClass.getMethods()) {
             if (method.isAnnotationPresent(PostConstruct.class)) {
                 try {
@@ -59,10 +59,12 @@ public class ObjectFactory {
         }
     }
 
-    private <T> T proxy(T t, Class<? extends T> implClass) {
+    private <T> T proxy(T t, Class<T> target, Class<? extends T> implClass) {
         T result = t;
-        for (ProxyConfigurer proxyConfigurer : proxyConfigurers) {
-            result = (T) proxyConfigurer.wrapIfNeeded(t, implClass);
+        if (target.isInterface()) {
+            for (ProxyConfigurer proxyConfigurer : proxyConfigurers) {
+                result = (T) proxyConfigurer.wrapIfNeeded(t, implClass);
+            }
         }
         return result;
     }

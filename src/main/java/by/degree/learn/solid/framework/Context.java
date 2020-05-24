@@ -10,7 +10,7 @@ public class Context {
 
     public <T> T getObject(Class<T> target) {
         var implClass = config.lookupImplementationClass(target);
-        return factory.createObject(implClass);
+        return factory.createObject(target, implClass);
     }
 
     public void setFactory(ObjectFactory factory) {
@@ -20,6 +20,4 @@ public class Context {
     public Config getConfig() {
         return config;
     }
-
-
 }
