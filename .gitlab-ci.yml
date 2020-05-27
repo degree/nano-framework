@@ -2,7 +2,7 @@ image: maven:3-openjdk-11
 
 Test:
   script:
-    - mvn test
+    - mvn install
   artifacts:
     reports:
       junit:
